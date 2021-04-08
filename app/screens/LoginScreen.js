@@ -28,7 +28,10 @@ export default function LoginScreen(props) {
     return (
       <View style={styles.container}>
         <View style={{ padding: 30 }}>
-          <Image source={require("../assets/mindbloom_Logo.png")} />
+          <Image
+            style={styles.logo}
+            source={require("../assets/mindbloom_Logo.png")}
+          />
         </View>
 
         <View style={{ padding: 10 }}>
@@ -98,15 +101,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 18,
   },
+  logo: {
+    width: 282,
+    height: 150,
+  },
   inputtext: {
     marginLeft: 20,
     fontFamily: "Lora_400Regular",
-    fontStyle: "normal",
-    fontWeight: "500",
     fontSize: 23,
-    lineHeight: 29,
-    display: "flex",
-    alignItems: "center",
     opacity: 0.37,
   },
   signuptext: {
