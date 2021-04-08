@@ -28,7 +28,7 @@ export default function LoginScreen(props) {
     return (
       <View style={styles.container}>
         <View style={{ padding: 30 }}>
-          <Image source={require("../assets/icons/mindbloom_Logo.png")} />
+          <Image source={require("../assets/mindbloom_Logo.png")} />
         </View>
 
         <View style={{ padding: 10 }}>
