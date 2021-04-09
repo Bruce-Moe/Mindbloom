@@ -25,7 +25,27 @@ export default function WelcomeScreen(props) {
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
-    return <View style={styles.container}></View>;
+    return (
+      <View style={styles.container}>
+        <View style>
+          <Text style={styles.welcomeText}> Welcome, David </Text>
+        </View>
+        <View style={{ padding: 41.5 }}>
+          <Image
+            style={styles.logo}
+            source={require("../assets/mindbloom_Logo.png")}
+          />
+        </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            props.navigation.navigate("Home");
+          }}
+        >
+          <Text style={styles.buttonText}>enter your garden</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 }
 
@@ -34,6 +54,34 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    color: "#ECF2F8",
+    backgroundColor: "#ECF2F8",
+  },
+  welcomeText: {
+    fontFamily: "Montserrat_400Regular",
+    fontWeight: "700",
+    fontSize: 36,
+    color: "#838EB1",
+  },
+  logo: {
+    width: 366.6,
+    height: 195,
+  },
+  button: {
+    justifyContent: "center",
+    backgroundColor: "#838EB1",
+    opacity: 0.35,
+    width: 318,
+    height: 57,
+    borderRadius: 17.33,
+    marginTop: 30,
+    marginBottom: 30,
+  },
+  buttonText: {
+    textAlign: "center",
+    color: "black",
+    fontSize: 23,
+    fontWeight: "500",
+    fontFamily: "Lora_400Regular",
+    opacity: 1,
   },
 });

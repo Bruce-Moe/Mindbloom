@@ -15,7 +15,7 @@ import {
 } from "@expo-google-fonts/lora";
 import { Montserrat_400Regular } from "@expo-google-fonts/montserrat";
 
-export default function SignupScreen(props) {
+export default function HomeScreen(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,

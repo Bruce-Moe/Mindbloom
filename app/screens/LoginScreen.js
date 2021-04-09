@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    color: "#ECF2F8",
+    backgroundColor: "#ECF2F8",
   },
   inputbox: {
     justifyContent: "center",
