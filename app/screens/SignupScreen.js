@@ -33,6 +33,57 @@ export default function SignupScreen(props) {
             source={require("../assets/mindbloom_Logo.png")}
           />
         </View>
+        <View style={{ padding: 20 }}>
+          <Image
+            style={styles.title}
+            source={require("../assets/createtitle.png")}
+          />
+        </View>
+        <View style={{ padding: 10 }}>
+          <View style={styles.inputbox}>
+            <TextInput
+              style={styles.inputtext}
+              placeholder="full name"
+              placeholderTextColor="#000000"
+            />
+          </View>
+
+          <View style={styles.inputbox}>
+            <TextInput
+              style={styles.inputtext}
+              placeholder="username"
+              placeholderTextColor="#000000"
+              secureTextEntry={true}
+              autoCapitalize="none"
+            />
+          </View>
+          <View style={styles.inputbox}>
+            <TextInput
+              style={styles.inputtext}
+              placeholder="password"
+              placeholderTextColor="#000000"
+              secureTextEntry={true}
+              autoCapitalize="none"
+            />
+          </View>
+          <View style={styles.inputbox}>
+            <TextInput
+              style={styles.inputtext}
+              placeholder="confirm password"
+              placeholderTextColor="#000000"
+              secureTextEntry={true}
+              autoCapitalize="none"
+            />
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.createbutton}
+          onPress={() => {
+            props.navigation.navigate("Welcome");
+          }}
+        >
+          <Text style={styles.createtext}>create your account</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -42,8 +93,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "top",
     backgroundColor: "#ECF2F8",
+  },
+  containertitle: {
+    flex: 1,
+    alignItems: "left",
+    justifyContent: "left",
+    backgroundColor: "#ECF2F8",
+  },
+  title: {
+    width: 220,
+    height: 35,
+    marginLeft: -110,
   },
   inputbox: {
     justifyContent: "center",
@@ -52,6 +114,8 @@ const styles = StyleSheet.create({
     height: 37,
     borderRadius: 15,
     margin: 18,
+    borderColor: "#000000",
+    borderWidth: 1,
   },
   inputtext: {
     marginLeft: 20,
@@ -61,18 +125,18 @@ const styles = StyleSheet.create({
   },
   createbutton: {
     justifyContent: "center",
-    backgroundColor: "#838EB1",
-    opacity: 0.35,
-    width: 318,
-    height: 57,
-    borderRadius: 17.33,
-    marginTop: 30,
-    marginBottom: 30,
+    backgroundColor: "#BAC3DE",
+    opacity: 75,
+    width: 250,
+    height: 50,
+    borderRadius: 20,
+    marginTop: 35,
+    marginBottom: 35,
   },
   createtext: {
     textAlign: "center",
     color: "black",
-    fontSize: 23,
+    fontSize: 21,
     fontFamily: "Montserrat_400Regular",
   },
   logo: {
