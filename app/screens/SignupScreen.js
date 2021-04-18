@@ -25,7 +25,16 @@ export default function SignupScreen(props) {
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
-    return <View style={styles.container}></View>;
+    return (
+      <View style={styles.container}>
+        <View style={{ padding: 30 }}>
+          <Image
+            style={styles.logo}
+            source={require("../assets/mindbloom_Logo.png")}
+          />
+        </View>
+      </View>
+    );
   }
 }
 
