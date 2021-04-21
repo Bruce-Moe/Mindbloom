@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 18,
     borderColor: "#000000",
-    borderWidth: 1,
+    borderWidth: 0.8,
   },
   inputtext: {
     marginLeft: 20,
