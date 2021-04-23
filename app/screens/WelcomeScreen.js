@@ -27,7 +27,7 @@ export default function WelcomeScreen(props) {
   } else {
     return (
       <View style={styles.container}>
-        <View style>
+        <View>
           <Text style={styles.welcomeText}> Welcome, David </Text>
         </View>
         <View style={{ padding: 41.5 }}>

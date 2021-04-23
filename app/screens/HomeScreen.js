@@ -8,13 +8,17 @@ import {
   Lora_400Regular,
   Lora_700Bold,
 } from "@expo-google-fonts/lora";
-import { Montserrat_400Regular } from "@expo-google-fonts/montserrat";
+import {
+  Montserrat_400Regular,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat";
 
 export default function HomeScreen(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
     Montserrat_400Regular,
+    Montserrat_700Bold,
   });
 
   if (!fontsLoaded) {
@@ -22,7 +26,7 @@ export default function HomeScreen(props) {
   } else {
     return (
       <View style={styles.container}>
-        <View style={styles.row}>
+        <View style={styles.topRow}>
           <View style={styles.inputWrap}>
             <Image
               style={styles.logo}
@@ -31,8 +35,36 @@ export default function HomeScreen(props) {
           </View>
           <View style={styles.inputWrap}>
             <TouchableOpacity style={styles.menuIcon}>
-              <FontAwesome5 name="bars" size={24} color="#161924" />
+              <FontAwesome5 name="bars" size={30} color="#838EB1" />
             </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.middleRow}>
+          <Image
+            style={styles.gardenText}
+            source={require("../assets/gardenText.png")}
+          />
+          <View style={{ alignItems: "center" }}>
+            <Image
+              style={styles.garden}
+              source={require("../assets/garden.png")}
+            />
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.flowerText}>
+              click on a flower for more detail!
+            </Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.goalText}>3.28 goal progress</Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <View style={styles.progressContainer}>
+              <Image
+                style={styles.progress}
+                source={require("../assets/progress.png")}
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -45,23 +77,58 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
-  row: {
+  flowerText: {
+    fontFamily: "Montserrat_400Regular",
+    fontSize: 15,
+  },
+  progress: {
+    height: 120,
+    width: 315,
+  },
+  topRow: {
     marginTop: getStatusBarHeight(),
-    flex: 1,
+    flex: 0.17,
     flexDirection: "row",
   },
   inputWrap: {
     flex: 1,
   },
+  middleRow: {
+    flex: 0.8,
+  },
+  progressContainer: {
+    marginTop: 10,
+    height: 130,
+    width: "90%",
+    borderRadius: 28,
+    backgroundColor: "#FBFCFD",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  goalText: {
+    marginTop: 50,
+    color: "#838EB1",
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 24,
+  },
+  gardenText: {
+    width: 192,
+    height: 64.8,
+    marginLeft: 20,
+  },
+  garden: {
+    width: 392,
+    height: 315,
+  },
   logo: {
-    width: 134.53,
-    height: 71.5,
-    marginLeft: 10,
+    width: 174.89,
+    height: 92.95,
+    marginLeft: 20,
   },
   menuIcon: {
     alignItems: "flex-end",
-    marginTop: 22,
-    marginRight: 10,
+    marginTop: 35,
+    marginRight: 20,
     color: "#838EB1",
   },
 });

@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "top",
+    justifyContent: "flex-start",
     backgroundColor: "#ECF2F8",
   },
   containertitle: {
     flex: 1,
-    alignItems: "left",
-    justifyContent: "left",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     backgroundColor: "#ECF2F8",
   },
   title: {
