@@ -39,7 +39,7 @@ export default function WelcomeScreen(props) {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            props.navigation.navigate("Home");
+            props.logInSetter(true);
           }}
         >
           <Text style={styles.buttonText}>enter your garden</Text>

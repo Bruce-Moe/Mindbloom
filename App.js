@@ -11,7 +11,6 @@ import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
-import LogInView from "./app/components/LogInView";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,10 +18,10 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const LogInWithSetterView = () => {
-    return <LogInView logInSetter={setLoggedIn} />;
+  const WelcomeWithSetterView = () => {
+    return <WelcomeScreen logInSetter={setLoggedIn} />;
   };
-  if (!loggedIn) {
+  if (loggedIn) {
     return (
       <NavigationContainer>
         <Drawer.Navigator>
@@ -42,10 +41,7 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="LogIn"
-          component={LogInWithSetterView}
-        >
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
             name="Login"
             component={LogInScreen}
@@ -58,8 +54,7 @@ export default function App() {
           />
           <Stack.Screen
             name="Welcome"
-            initialParams={setLoggedIn}
-            component={WelcomeScreen}
+            component={WelcomeWithSetterView}
             options={{ headerShown: false }}
           />
           <Stack.Screen
