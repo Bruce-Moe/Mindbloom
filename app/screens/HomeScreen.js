@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import AppLoading from "expo-app-loading";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { FontAwesome5 } from "@expo/vector-icons";
+
 import {
   useFonts,
   Lora_400Regular,
@@ -34,7 +35,12 @@ export default function HomeScreen(props) {
             />
           </View>
           <View style={styles.inputWrap}>
-            <TouchableOpacity style={styles.menuIcon}>
+            <TouchableOpacity
+              style={styles.menuIcon}
+              onPress={() => {
+                props.navigation.toggleDrawer();
+              }}
+            >
               <FontAwesome5 name="bars" size={30} color="#838EB1" />
             </TouchableOpacity>
           </View>

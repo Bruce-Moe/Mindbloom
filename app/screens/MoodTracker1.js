@@ -34,7 +34,12 @@ export default function MoodTracker1(props) {
             />
           </View>
           <View style={styles.inputWrap}>
-            <TouchableOpacity style={styles.menuIcon}>
+            <TouchableOpacity
+              style={styles.menuIcon}
+              onPress={() => {
+                props.navigation.toggleDrawer();
+              }}
+            >
               <FontAwesome5 name="bars" size={30} color="#838EB1" />
             </TouchableOpacity>
           </View>
