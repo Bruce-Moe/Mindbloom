@@ -11,6 +11,7 @@ import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
+import ProgressScreen from "./app/screens/ProgressScreen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -26,13 +27,18 @@ export default function App() {
       <NavigationContainer>
         <Drawer.Navigator>
           <Drawer.Screen
-            name="Home"
+            name="your garden"
             component={HomeScreen}
             options={{ headerShown: false }}
           />
           <Drawer.Screen
-            name="MoodTracker1"
+            name="daily mood check"
             component={MoodTracker1Screen}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="progress"
+            component={ProgressScreen}
             options={{ headerShown: false }}
           />
         </Drawer.Navigator>
