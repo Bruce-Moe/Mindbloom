@@ -13,7 +13,7 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
-export default function MoodTracker1(props) {
+export default function MoodTrackerPetals(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
@@ -34,12 +34,7 @@ export default function MoodTracker1(props) {
             />
           </View>
           <View style={styles.inputWrap}>
-            <TouchableOpacity
-              style={styles.menuIcon}
-              onPress={() => {
-                props.navigation.toggleDrawer();
-              }}
-            >
+            <TouchableOpacity style={styles.menuIcon}>
               <FontAwesome5 name="bars" size={30} color="#838EB1" />
             </TouchableOpacity>
           </View>
@@ -58,8 +53,16 @@ export default function MoodTracker1(props) {
         <View style={styles.containerOther}>
           <Image
             style={styles.petals}
-            source={require("../assets/petals.png")}
+            source={require("../assets/coloredPetals.png")}
           />
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={() => {
+              props.navigation.navigate("Home");
+            }}
+          >
+            <Text style={styles.submitText}>done!</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -78,13 +81,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#ECF2F8",
-  },
-  nextButton: {
-    justifyContent: "center",
-    backgroundColor: "#BAC3DE",
-    opacity: 0,
-    width: 350,
-    height: 360,
   },
   topRow: {
     marginTop: getStatusBarHeight(),
@@ -127,6 +123,22 @@ const styles = StyleSheet.create({
     width: 174.89,
     height: 92.95,
     marginLeft: 20,
+  },
+  submitButton: {
+    justifyContent: "center",
+    backgroundColor: "#BAC3DE",
+    opacity: 75,
+    width: 250,
+    height: 50,
+    borderRadius: 20,
+    marginTop: 35,
+    marginBottom: 35,
+  },
+  submitText: {
+    textAlign: "center",
+    color: "black",
+    fontSize: 21,
+    fontFamily: "Montserrat_400Regular",
   },
   menuIcon: {
     alignItems: "flex-end",
