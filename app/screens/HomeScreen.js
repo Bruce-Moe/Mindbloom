@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   progress: {
-    height: 120,
+    height: 125,
     width: 315,
   },
   topRow: {

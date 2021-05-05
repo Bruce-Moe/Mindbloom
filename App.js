@@ -12,6 +12,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
 import ProgressScreen from "./app/screens/ProgressScreen";
+import ModuleScreen from "./app/screens/CombattingAnxiety";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,11 @@ export default function App() {
           <Drawer.Screen
             name="progress"
             component={ProgressScreen}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="modules"
+            component={ModuleScreen}
             options={{ headerShown: false }}
           />
         </Drawer.Navigator>

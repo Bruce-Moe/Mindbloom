@@ -13,7 +13,7 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
-export default function ProgressScreen(props) {
+export default function CombattingAnxiety(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
@@ -44,24 +44,6 @@ export default function ProgressScreen(props) {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.middleRow}>
-          <Image
-            style={styles.logo2}
-            source={require("../assets/progressPage.jpg")}
-          />
-          <TouchableOpacity
-            style={styles.mod}
-            activeOpacity={1}
-            onPress={() => {
-              props.navigation.navigate("modules");
-            }}
-          >
-            <Image
-              style={styles.modules}
-              source={require("../assets/modules.jpg")}
-            />
-          </TouchableOpacity>
-        </View>
       </View>
     );
   }
@@ -72,10 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
-  modules: {
-    height: 140,
-    width: 350,
-  },
   flowerText: {
     fontFamily: "Montserrat_400Regular",
     fontSize: 15,
@@ -84,23 +62,16 @@ const styles = StyleSheet.create({
     height: 120,
     width: 315,
   },
-  logo2: {
-    width: 351.2,
-    height: 520,
-    paddingLeft: 20,
-  },
   topRow: {
     marginTop: getStatusBarHeight(),
     flex: 0.17,
     flexDirection: "row",
-    paddingBottom: 100,
   },
   inputWrap: {
     flex: 1,
   },
   middleRow: {
-    alignItems: "center",
-    justifyContent: "center",
+    flex: 0.8,
   },
   progressContainer: {
     marginTop: 10,
