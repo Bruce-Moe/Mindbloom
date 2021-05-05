@@ -70,8 +70,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ECF2F8",
-    alignItems: "left",
-    justifyContent: "flex-start",
   },
   containerOther: {
     flex: 1,
@@ -118,8 +116,8 @@ const styles = StyleSheet.create({
   title: {
     width: 350,
     height: 100,
-    alignItems: "left",
-    justifyContent: "left",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     marginTop: 20,
     marginLeft: 20,
   },

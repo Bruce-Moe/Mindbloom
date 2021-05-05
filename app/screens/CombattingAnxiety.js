@@ -54,14 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
-  flowerText: {
-    fontFamily: "Montserrat_400Regular",
-    fontSize: 15,
-  },
-  progress: {
-    height: 120,
-    width: 315,
-  },
   topRow: {
     marginTop: getStatusBarHeight(),
     flex: 0.17,
@@ -69,33 +61,6 @@ const styles = StyleSheet.create({
   },
   inputWrap: {
     flex: 1,
-  },
-  middleRow: {
-    flex: 0.8,
-  },
-  progressContainer: {
-    marginTop: 10,
-    height: 130,
-    width: "90%",
-    borderRadius: 28,
-    backgroundColor: "#FBFCFD",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  goalText: {
-    marginTop: 50,
-    color: "#838EB1",
-    fontFamily: "Montserrat_700Bold",
-    fontSize: 24,
-  },
-  gardenText: {
-    width: 192,
-    height: 64.8,
-    marginLeft: 20,
-  },
-  garden: {
-    width: 392,
-    height: 315,
   },
   logo: {
     width: 174.89,
