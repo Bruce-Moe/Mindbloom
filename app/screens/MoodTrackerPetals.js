@@ -58,7 +58,7 @@ export default function MoodTrackerPetals(props) {
           <TouchableOpacity
             style={styles.submitButton}
             onPress={() => {
-              props.navigation.navigate("Welcome");
+              props.navigation.navigate("Home");
             }}
           >
             <Text style={styles.submitText}>done!</Text>

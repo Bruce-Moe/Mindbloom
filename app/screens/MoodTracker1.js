@@ -79,6 +79,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#ECF2F8",
   },
+  nextButton: {
+    justifyContent: "center",
+    backgroundColor: "#BAC3DE",
+    opacity: 0,
+    width: 350,
+    height: 360,
+  },
   topRow: {
     marginTop: getStatusBarHeight(),
     flex: 0.17,
