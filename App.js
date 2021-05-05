@@ -8,6 +8,8 @@ import LogInScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
+import MoodTracker1 from "./app/screens/MoodTracker1";
+import MoodTrackerPetals from "./app/screens/MoodTrackerPetals";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +17,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="MoodTrackerPetals"
+          component={MoodTrackerPetals}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MoodTracker1"
+          component={MoodTracker1}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Login"
           component={LogInScreen}
