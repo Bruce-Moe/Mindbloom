@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import AppLoading from "expo-app-loading";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { FontAwesome5 } from "@expo/vector-icons";
-// import Video from "react-native-video";
-
 import {
   useFonts,
   Lora_400Regular,
@@ -15,7 +13,7 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
-export default function HomeScreen(props) {
+export default function ProgressScreen(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
@@ -47,40 +45,10 @@ export default function HomeScreen(props) {
           </View>
         </View>
         <View style={styles.middleRow}>
-          {/* <Video
-            source={require("./../assets/rain.mp4")}
-            muted={true}
-            repeat={true}
-            resizeMode={"cover"}
-            rate={1.0}
-            ignoreSilentSwitch={"obey"}
-          /> */}
           <Image
-            style={styles.gardenText}
-            source={require("../assets/gardenText.png")}
+            style={styles.logo2}
+            source={require("../assets/progressPage.png")}
           />
-          <View style={{ alignItems: "center" }}>
-            <Image
-              style={styles.garden}
-              source={require("../assets/garden.png")}
-            />
-          </View>
-          <View style={{ alignItems: "center" }}>
-            <Text style={styles.flowerText}>
-              click on a flower for more detail!
-            </Text>
-          </View>
-          <View style={{ alignItems: "center" }}>
-            <Text style={styles.goalText}>3.28 goal progress</Text>
-          </View>
-          <View style={{ alignItems: "center" }}>
-            <View style={styles.progressContainer}>
-              <Image
-                style={styles.progress}
-                source={require("../assets/progress.png")}
-              />
-            </View>
-          </View>
         </View>
       </View>
     );
@@ -100,16 +68,23 @@ const styles = StyleSheet.create({
     height: 120,
     width: 315,
   },
+  logo2: {
+    width: 327.25,
+    height: 623.05,
+    paddingLeft: 20,
+  },
   topRow: {
     marginTop: getStatusBarHeight(),
     flex: 0.17,
     flexDirection: "row",
+    paddingBottom: 100,
   },
   inputWrap: {
     flex: 1,
   },
   middleRow: {
-    flex: 0.8,
+    alignItems: "center",
+    justifyContent: "center",
   },
   progressContainer: {
     marginTop: 10,
