@@ -13,6 +13,7 @@ import HomeScreen from "./app/screens/HomeScreen";
 import MoodTracker1 from "./app/screens/MoodTracker1";
 import MoodTrackerPetals from "./app/screens/MoodTrackerPetals";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
+import MoodTracker2Screen from "./app/screens/MoodTracker2";
 import ProgressScreen from "./app/screens/ProgressScreen";
 
 const Stack = createStackNavigator();
@@ -29,13 +30,28 @@ export default function App() {
       <NavigationContainer>
         <Drawer.Navigator>
           <Drawer.Screen
+            name="MoodTracker2"
+            component={MoodTracker2Screen}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="MoodTracker1"
+            component={MoodTracker1}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="MoodTrackerPetals"
+            component={MoodTrackerPetals}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
             name="your garden"
             component={HomeScreen}
             options={{ headerShown: false }}
           />
           <Drawer.Screen
             name="daily mood check"
-            component={MoodTracker1Screen}
+            component={MoodTracker2Screen}
             options={{ headerShown: false }}
           />
           <Drawer.Screen
@@ -50,16 +66,6 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
-            name="MoodTracker1"
-            component={MoodTracker1}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MoodTrackerPetals"
-            component={MoodTrackerPetals}
-            options={{ headerShown: false }}
-          />
           <Stack.Screen
             name="Login"
             component={LogInScreen}
