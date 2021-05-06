@@ -10,11 +10,20 @@ import LogInScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
-import MoodTrackerPetals from "./app/screens/MoodTrackerPetals";
+import MoodTrackerPetalsScreen from "./app/screens/MoodTrackerPetals";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
 import MoodTracker2Screen from "./app/screens/MoodTracker2";
 import ProgressScreen from "./app/screens/ProgressScreen";
 import ModuleScreen from "./app/screens/CombattingAnxiety";
+import {
+  useFonts,
+  Lora_400Regular,
+  Lora_700Bold,
+} from "@expo-google-fonts/lora";
+import {
+  Montserrat_400Regular,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -22,36 +31,36 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const WelcomeWithSetterView = () => {
-    return <WelcomeScreen logInSetter={setLoggedIn} />;
+  const MoodWithSetterView = () => {
+    return <MoodTrackerPetalsScreen logInSetter={setLoggedIn} />;
   };
+
+  let [fontsLoaded] = useFonts({
+    Lora_400Regular,
+    Lora_700Bold,
+    Montserrat_400Regular,
+    Montserrat_700Bold,
+  });
+
   if (loggedIn) {
     return (
       <NavigationContainer>
-        <Drawer.Navigator>
-          <Drawer.Screen
-            name="MoodTracker2"
-            component={MoodTracker2Screen}
-            options={{ headerShown: false }}
-          />
-          <Drawer.Screen
-            name="MoodTracker1"
-            component={MoodTracker1}
-            options={{ headerShown: false }}
-          />
-          <Drawer.Screen
-            name="MoodTrackerPetals"
-            component={MoodTrackerPetals}
-            options={{ headerShown: false }}
-          />
+        <Drawer.Navigator
+          initialRouteName="your garden"
+          drawerContentOptions={{
+            activeTintColor: "#838EB1",
+            style: { backgroundColor: "#ECF2F8" },
+            itemStyle: { padding: 10 },
+            labelStyle: {
+              fontFamily: "Lora_400Regular",
+              color: "#838EB1",
+              fontSize: 23,
+            },
+          }}
+        >
           <Drawer.Screen
             name="your garden"
             component={HomeScreen}
-            options={{ headerShown: false }}
-          />
-          <Drawer.Screen
-            name="daily mood check"
-            component={MoodTracker2Screen}
             options={{ headerShown: false }}
           />
           <Drawer.Screen
@@ -64,6 +73,11 @@ export default function App() {
             component={ModuleScreen}
             options={{ headerShown: false }}
           />
+          <Drawer.Screen
+            name="visit friends"
+            component={ModuleScreen}
+            options={{ headerShown: false }}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     );
@@ -71,11 +85,6 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
-            name="MoodTrackerPetals"
-            component={MoodTrackerPetals}
-            options={{ headerShown: false }}
-          />
           <Stack.Screen
             name="Login"
             component={LogInScreen}
@@ -88,7 +97,22 @@ export default function App() {
           />
           <Stack.Screen
             name="Welcome"
-            component={WelcomeWithSetterView}
+            component={WelcomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="daily mood check"
+            component={MoodTracker2Screen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MoodTracker1"
+            component={MoodTracker1Screen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MoodTrackerPetals"
+            component={MoodWithSetterView}
             options={{ headerShown: false }}
           />
           <Stack.Screen

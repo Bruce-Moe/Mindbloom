@@ -33,16 +33,6 @@ export default function MoodTracker1(props) {
               source={require("../assets/mindbloom_Logo.png")}
             />
           </View>
-          <View style={styles.inputWrap}>
-            <TouchableOpacity
-              style={styles.menuIcon}
-              onPress={() => {
-                props.navigation.toggleDrawer();
-              }}
-            >
-              <FontAwesome5 name="bars" size={30} color="#838EB1" />
-            </TouchableOpacity>
-          </View>
         </View>
         <View style={{ padding: 0 }}>
           <Image
@@ -53,8 +43,9 @@ export default function MoodTracker1(props) {
         <Text style={styles.questionText}>what have you been up to?</Text>
         <View style={styles.containerOther}>
           <TouchableOpacity
+            activeOpacity={1}
             onPress={() => {
-              props.navigation.navigate("MoodTracker1Screen");
+              props.navigation.navigate("MoodTracker1");
             }}
           >
             <Image
@@ -72,8 +63,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ECF2F8",
-    alignItems: "left",
-    justifyContent: "flex-start",
   },
   containerOther: {
     flex: 1,
@@ -106,8 +95,8 @@ const styles = StyleSheet.create({
   title: {
     width: 350,
     height: 100,
-    alignItems: "left",
-    justifyContent: "left",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     marginTop: 20,
     marginLeft: 20,
   },

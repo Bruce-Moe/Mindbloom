@@ -33,16 +33,6 @@ export default function MoodTracker1(props) {
               source={require("../assets/mindbloom_Logo.png")}
             />
           </View>
-          <View style={styles.inputWrap}>
-            <TouchableOpacity
-              style={styles.menuIcon}
-              onPress={() => {
-                props.navigation.toggleDrawer();
-              }}
-            >
-              <FontAwesome5 name="bars" size={30} color="#838EB1" />
-            </TouchableOpacity>
-          </View>
         </View>
         <View style={{ padding: 0 }}>
           <Image
@@ -56,10 +46,16 @@ export default function MoodTracker1(props) {
           the worst)
         </Text>
         <View style={styles.containerOther}>
-          <Image
-            style={styles.petals}
-            source={require("../assets/petals.png")}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("MoodTrackerPetals");
+            }}
+          >
+            <Image
+              style={styles.petals}
+              source={require("../assets/petals.png")}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -103,15 +99,15 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontFamily: "Montserrat_700Bold",
     fontSize: 24,
-    marginLeft: 31,
+    marginLeft: 25,
     marginTop: 10,
   },
   instruction: {
     marginTop: 15,
     color: "#000000",
-    fontFamily: "Montserrat_700",
+    fontFamily: "Montserrat_400Regular",
     fontSize: 18,
-    marginLeft: 31,
+    marginLeft: 25,
   },
   title: {
     width: 350,
@@ -119,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     marginTop: 20,
-    marginLeft: 20,
+    marginLeft: 10,
   },
   logo: {
     width: 174.89,

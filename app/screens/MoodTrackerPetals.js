@@ -33,11 +33,6 @@ export default function MoodTrackerPetals(props) {
               source={require("../assets/mindbloom_Logo.png")}
             />
           </View>
-          <View style={styles.inputWrap}>
-            <TouchableOpacity style={styles.menuIcon}>
-              <FontAwesome5 name="bars" size={30} color="#838EB1" />
-            </TouchableOpacity>
-          </View>
         </View>
         <View style={{ padding: 0 }}>
           <Image
@@ -58,7 +53,7 @@ export default function MoodTrackerPetals(props) {
           <TouchableOpacity
             style={styles.submitButton}
             onPress={() => {
-              props.navigation.navigate("Home");
+              props.logInSetter(true);
             }}
           >
             <Text style={styles.submitText}>done!</Text>
@@ -73,8 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ECF2F8",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
   },
   containerOther: {
     flex: 1,
@@ -101,15 +94,16 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontFamily: "Montserrat_700Bold",
     fontSize: 24,
-    marginLeft: 31,
+    marginLeft: 25,
     marginTop: 10,
   },
   instruction: {
     marginTop: 15,
+    marginBottom: 10,
     color: "#000000",
-    fontFamily: "Montserrat_700",
+    fontFamily: "Montserrat_400Regular",
     fontSize: 18,
-    marginLeft: 31,
+    marginLeft: 25,
   },
   title: {
     width: 350,
@@ -117,7 +111,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     marginTop: 20,
-    marginLeft: 20,
+    marginLeft: 9,
   },
   logo: {
     width: 174.89,
