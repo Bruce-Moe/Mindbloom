@@ -10,11 +10,11 @@ import LogInScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
-import MoodTracker1 from "./app/screens/MoodTracker1";
 import MoodTrackerPetals from "./app/screens/MoodTrackerPetals";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
 import MoodTracker2Screen from "./app/screens/MoodTracker2";
 import ProgressScreen from "./app/screens/ProgressScreen";
+import ModuleScreen from "./app/screens/CombattingAnxiety";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -59,6 +59,11 @@ export default function App() {
             component={ProgressScreen}
             options={{ headerShown: false }}
           />
+          <Drawer.Screen
+            name="modules"
+            component={ModuleScreen}
+            options={{ headerShown: false }}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     );
@@ -66,6 +71,11 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen
+            name="MoodTrackerPetals"
+            component={MoodTrackerPetals}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Login"
             component={LogInScreen}

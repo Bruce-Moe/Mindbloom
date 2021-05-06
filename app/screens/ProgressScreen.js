@@ -47,8 +47,20 @@ export default function ProgressScreen(props) {
         <View style={styles.middleRow}>
           <Image
             style={styles.logo2}
-            source={require("../assets/progressPage.png")}
+            source={require("../assets/progressPage.jpg")}
           />
+          <TouchableOpacity
+            style={styles.mod}
+            activeOpacity={1}
+            onPress={() => {
+              props.navigation.navigate("modules");
+            }}
+          >
+            <Image
+              style={styles.modules}
+              source={require("../assets/modules.jpg")}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -60,6 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
+  modules: {
+    height: 140,
+    width: 350,
+  },
   flowerText: {
     fontFamily: "Montserrat_400Regular",
     fontSize: 15,
@@ -69,8 +85,8 @@ const styles = StyleSheet.create({
     width: 315,
   },
   logo2: {
-    width: 327.25,
-    height: 623.05,
+    width: 351.2,
+    height: 520,
     paddingLeft: 20,
   },
   topRow: {

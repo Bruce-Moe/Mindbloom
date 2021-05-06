@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   },
   button: {
     justifyContent: "center",
-    backgroundColor: "#838EB1",
-    opacity: 0.35,
+    backgroundColor: "#BAC3DE",
+    opacity: 75,
     width: 318,
     height: 57,
     borderRadius: 17.33,
@@ -82,6 +82,5 @@ const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: "500",
     fontFamily: "Lora_400Regular",
-    opacity: 1,
   },
 });
