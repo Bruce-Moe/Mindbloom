@@ -18,6 +18,7 @@ import ProgressScreen from "./app/screens/ProgressScreen";
 import ModuleScreen from "./app/screens/CombattingAnxiety";
 import FriendsScreen from "./app/screens/VisitFriends";
 import FriendGarden from "./app/screens/FriendGarden";
+import InitialScreen from "./app/screens/InitialScreen";
 
 import {
   useFonts,
@@ -105,7 +106,12 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="Initial">
+          <Stack.Screen
+            name="Initial"
+            component={InitialScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Login"
             component={LogInScreen}
