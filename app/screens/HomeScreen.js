@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import AppLoading from "expo-app-loading";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -47,14 +54,6 @@ export default function HomeScreen(props) {
           </View>
         </View>
         <View style={styles.middleRow}>
-          {/* <Video
-            source={require("./../assets/rain.mp4")}
-            muted={true}
-            repeat={true}
-            resizeMode={"cover"}
-            rate={1.0}
-            ignoreSilentSwitch={"obey"}
-          /> */}
           <Image
             style={styles.gardenText}
             source={require("../assets/gardenText.png")}
@@ -62,7 +61,7 @@ export default function HomeScreen(props) {
           <View style={{ alignItems: "center" }}>
             <Image
               style={styles.garden}
-              source={require("../assets/garden.png")}
+              source={require("../assets/garden2.jpg")}
             />
           </View>
           <View style={{ alignItems: "center" }}>
@@ -92,6 +91,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
+  cover: {
+    width: 400,
+    height: 400,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
   flowerText: {
     fontFamily: "Montserrat_400Regular",
     fontSize: 15,
@@ -102,7 +107,7 @@ const styles = StyleSheet.create({
   },
   topRow: {
     marginTop: getStatusBarHeight(),
-    flex: 0.17,
+    flex: 0.15,
     flexDirection: "row",
   },
   inputWrap: {

@@ -13,7 +13,7 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
-export default function MoodTracker2(props) {
+export default function VisitFriends(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
@@ -33,26 +33,39 @@ export default function MoodTracker2(props) {
               source={require("../assets/mindbloom_Logo.png")}
             />
           </View>
+          <View style={styles.inputWrap}>
+            <TouchableOpacity
+              style={styles.menuIcon}
+              onPress={() => {
+                props.navigation.toggleDrawer();
+              }}
+            >
+              <FontAwesome5 name="bars" size={30} color="#838EB1" />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View>
+        <View style={styles.middleRow}>
           <Image
-            style={styles.title}
-            source={require("../assets/checkInTitle.png")}
+            style={styles.friendsText}
+            source={require("../assets/friendsText.jpg")}
           />
-        </View>
-        <Text style={styles.questionText}>what have you been up to?</Text>
-        <View style={styles.containerOther}>
-          <TouchableOpacity
-            activeOpacity={1}
-            onPress={() => {
-              props.navigation.navigate("MoodTracker1");
-            }}
-          >
-            <Image
-              style={styles.choices}
-              source={require("../assets/choices.png")}
-            ></Image>
-          </TouchableOpacity>
+          <View style={{ alignItems: "center", marginTop: 18 }}>
+            <TouchableOpacity
+              style={{ paddingBottom: 0 }}
+              activeOpacity={1}
+              onPress={() => {
+                props.navigation.navigate("friend garden");
+              }}
+            >
+              <Image
+                style={styles.friends}
+                source={require("../assets/friendsPic.jpg")}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={{ alignItems: "flex-end", paddingRight: 20 }}>
+            <Image style={styles.rose} source={require("../assets/rose.jpg")} />
+          </View>
         </View>
       </View>
     );
@@ -64,22 +77,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
-  containerOther: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ECF2F8",
+  friends: {
+    height: 440,
+    width: 376.2,
   },
-  nextButton: {
-    justifyContent: "center",
-    backgroundColor: "#BAC3DE",
-    opacity: 0,
-    width: 350,
-    height: 360,
+  rose: {
+    height: 150.75,
+    width: 266.85,
+  },
+  friendsText: {
+    width: 294,
+    height: 60,
+    marginLeft: 20,
   },
   topRow: {
     marginTop: getStatusBarHeight(),
-    flex: 0.15,
+    flex: 0.13,
     flexDirection: "row",
   },
   inputWrap: {
@@ -87,25 +100,6 @@ const styles = StyleSheet.create({
   },
   middleRow: {
     flex: 0.8,
-  },
-  choices: {
-    width: 320,
-    height: 510,
-  },
-  title: {
-    width: 350,
-    height: 100,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    marginTop: 20,
-    marginLeft: 20,
-  },
-  questionText: {
-    color: "#000000",
-    fontFamily: "Montserrat_700Bold",
-    fontSize: 24,
-    marginLeft: 31,
-    marginTop: 10,
   },
   logo: {
     width: 174.89,

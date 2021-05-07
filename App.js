@@ -10,11 +10,15 @@ import LogInScreen from "./app/screens/LoginScreen";
 import SignupScreen from "./app/screens/SignupScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
+import HomeScreen2 from "./app/screens/HomeScreen2";
 import MoodTrackerPetalsScreen from "./app/screens/MoodTrackerPetals";
 import MoodTracker1Screen from "./app/screens/MoodTracker1";
 import MoodTracker2Screen from "./app/screens/MoodTracker2";
 import ProgressScreen from "./app/screens/ProgressScreen";
 import ModuleScreen from "./app/screens/CombattingAnxiety";
+import FriendsScreen from "./app/screens/VisitFriends";
+import FriendGarden from "./app/screens/FriendGarden";
+
 import {
   useFonts,
   Lora_400Regular,
@@ -27,6 +31,23 @@ import {
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+function Friends() {
+  return (
+    <Stack.Navigator initialRouteName="friends screen">
+      <Stack.Screen
+        name="friends screen"
+        component={FriendsScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="friend garden"
+        component={FriendGarden}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -75,7 +96,7 @@ export default function App() {
           />
           <Drawer.Screen
             name="visit friends"
-            component={ModuleScreen}
+            component={Friends}
             options={{ headerShown: false }}
           />
         </Drawer.Navigator>

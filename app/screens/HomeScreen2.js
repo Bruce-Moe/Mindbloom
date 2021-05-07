@@ -10,7 +10,6 @@ import {
 import AppLoading from "expo-app-loading";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { FontAwesome5 } from "@expo/vector-icons";
-import * as WebBrowser from "expo-web-browser";
 // import Video from "react-native-video";
 
 import {
@@ -23,7 +22,7 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
-export default function CombattingAnxiety(props) {
+export default function HomeScreen2(props) {
   let [fontsLoaded] = useFonts({
     Lora_400Regular,
     Lora_700Bold,
@@ -56,31 +55,30 @@ export default function CombattingAnxiety(props) {
         </View>
         <View style={styles.middleRow}>
           <Image
-            style={styles.header}
-            source={require("../assets/headerText.jpg")}
+            style={styles.gardenText}
+            source={require("../assets/gardenText.png")}
           />
           <View style={{ alignItems: "center" }}>
-            <View style={{ paddingBottom: 15 }}>
+            <Image
+              style={styles.garden}
+              source={require("../assets/garden.jpg")}
+            />
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.flowerText}>
+              click on a flower for more detail!
+            </Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.goalText}>3.30 goal progress</Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <View style={styles.progressContainer}>
               <Image
-                style={styles.chapter}
-                source={require("../assets/chapterText.jpg")}
+                style={styles.progress}
+                source={require("../assets/progress2.jpg")}
               />
             </View>
-            <TouchableOpacity
-              style={styles.video}
-              onPress={() => {
-                WebBrowser.openBrowserAsync("https://my.utexas.edu");
-              }}
-            >
-              <Image
-                style={styles.videoImg}
-                source={require("../assets/Video.jpg")}
-              />
-            </TouchableOpacity>
-            <Image
-              style={styles.footer}
-              source={require("../assets/Footer.jpg")}
-            />
           </View>
         </View>
       </View>
@@ -93,14 +91,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECF2F8",
   },
+  cover: {
+    width: 400,
+    height: 400,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  flowerText: {
+    fontFamily: "Montserrat_400Regular",
+    fontSize: 15,
+  },
+  progress: {
+    height: 125,
+    width: 315,
+  },
   topRow: {
     marginTop: getStatusBarHeight(),
-    flex: 0.14,
+    flex: 0.15,
     flexDirection: "row",
-  },
-  footer: {
-    height: 329,
-    width: 336.7,
   },
   inputWrap: {
     flex: 1,
@@ -108,16 +116,29 @@ const styles = StyleSheet.create({
   middleRow: {
     flex: 0.8,
   },
-  chapter: {
-    height: 50,
-    width: 300,
-    marginBottom: 5,
+  progressContainer: {
+    marginTop: 10,
+    height: 130,
+    width: "90%",
+    borderRadius: 28,
+    backgroundColor: "#FBFCFD",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  header: {
-    width: 240,
-    height: 59.15,
-    marginLeft: 30,
-    marginBottom: 5,
+  goalText: {
+    marginTop: 50,
+    color: "#838EB1",
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 24,
+  },
+  gardenText: {
+    width: 192,
+    height: 64.8,
+    marginLeft: 20,
+  },
+  garden: {
+    width: 320.8,
+    height: 315.2,
   },
   logo: {
     width: 174.89,
@@ -129,12 +150,5 @@ const styles = StyleSheet.create({
     marginTop: 35,
     marginRight: 20,
     color: "#838EB1",
-  },
-  video: {
-    marginBottom: 5,
-  },
-  videoImg: {
-    width: 330,
-    height: 185,
   },
 });
